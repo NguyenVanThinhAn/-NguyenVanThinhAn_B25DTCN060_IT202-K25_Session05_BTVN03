@@ -26,3 +26,11 @@ INSERT INTO drivers (name, status, trust_score, distance_km) VALUES
 SELECT name,trust_score,distance_km FROM drivers WHERE status = "AVAILABLE" AND trust_score >= 80 ORDER BY distance_km ASC;
 
 -- Check lần lượt từ trạng thái đến điểm uy tín cuối cùng sort.
+-- I/O:
+-- in: status, trust_score, distance_km
+-- out: name, trust_score, distance_km
+
+-- backend check:
+-- if trust_score < 0 OR distance_km < 0 -> reject
+-- if status empty/null -> reject
+-- only accept valid status
